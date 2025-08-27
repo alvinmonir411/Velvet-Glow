@@ -1,9 +1,6 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 .custom-glow-shadow {
   filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.7));
 }

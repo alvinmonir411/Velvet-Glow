@@ -6,6 +6,7 @@ import Collection from "./Component/Collection";
 import ProductCarosel from "./Component/ProductCarosel";
 import PopularProducts from "./Component/PopularProducts";
 import CustomerTestimonial from "./Component/CustomerTestimonial";
+import Footer from "./Component/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProductCarosel />
       <PopularProducts />
       <CustomerTestimonial />
+      <Footer />
     </div>
   );
 }

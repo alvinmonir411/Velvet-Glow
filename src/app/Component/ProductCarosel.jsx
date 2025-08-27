@@ -1,5 +1,4 @@
-// components/ProductCarouselSection.jsx
-"use client"; // Next.js 15 এর জন্য ক্লায়েন্ট কম্পোনেন্ট
+"use client";
 
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
@@ -36,7 +35,6 @@ const ProductCarousel = () => {
                 nextEl: nextRef.current,
               }}
               onBeforeInit={(swiper) => {
-                // Swiper নেভিগেশন রেফ ঠিক করা
                 swiper.params.navigation.prevEl = prevRef.current;
                 swiper.params.navigation.nextEl = nextRef.current;
               }}

@@ -5,6 +5,7 @@ import Hiro from "./Component/Hiro";
 import Collection from "./Component/Collection";
 import ProductCarosel from "./Component/ProductCarosel";
 import PopularProducts from "./Component/PopularProducts";
+import CustomerTestimonial from "./Component/CustomerTestimonial";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Collection />
       <ProductCarosel />
       <PopularProducts />
+      <CustomerTestimonial />
     </div>
   );
 }

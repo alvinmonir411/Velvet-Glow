@@ -72,38 +72,32 @@ const PopularProducts = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
           Our Popular Product
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
-              className=" relative flex flex-col items-center"
+              className="relative flex flex-col items-center bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               {product.discount && (
                 <span className="absolute top-3 left-3 z-10 bg-red-600 text-white text-xs px-2 py-1 rounded">
                   {product.discount}%
                 </span>
               )}
-              <div className="">
-                <div className="  ">
-                  <div className="relative w-[300px] h-[300px] mb-4 bg-gray-100 rounded-lg">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      style={{ objectFit: "contain" }}
-                      className="p-5"
-                    />
-                  </div>
-                </div>{" "}
-                <div className="text-start">
-                  <p className="text-sm text-gray-600">{product.brand}</p>
-                  <h3 className="text-base font-semibold mt-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-red-600 mt-1 font-medium">
-                    ${product.price}
-                  </p>
-                </div>
+              <div className="w-full aspect-square relative bg-gray-100 flex items-center justify-center">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  className="p-5"
+                />
+              </div>
+              <div className="p-4 w-full text-center sm:text-start">
+                <p className="text-sm text-gray-600">{product.brand}</p>
+                <h3 className="text-base font-semibold mt-1">{product.name}</h3>
+                <p className="text-red-600 mt-1 font-medium">
+                  ${product.price}
+                </p>
               </div>
             </div>
           ))}

@@ -30,7 +30,6 @@ export default function Home() {
         <Blog />
       </div>
       <div id="Footer">
-        {" "}
         <Footer />
       </div>
     </div>

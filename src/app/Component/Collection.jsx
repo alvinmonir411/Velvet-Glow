@@ -1,5 +1,3 @@
-// components/CollectionSection.jsx (or wherever you'd like to place this component)
-
 import Image from "next/image";
 import React from "react";
 

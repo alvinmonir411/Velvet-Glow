@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,6 +19,16 @@ const carouselItems = [
 const ProductCarousel = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
     <section className="bg-white py-16 md:py-24">
@@ -30,14 +41,7 @@ const ProductCarousel = () => {
               slidesPerView={2}
               spaceBetween={20}
               loop={true}
-              navigation={{
-                prevEl: prevRef.current,
-                nextEl: nextRef.current,
-              }}
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-              }}
+              onSwiper={setSwiperInstance}
               className="w-full h-full"
             >
               {carouselItems.map((item) => (
@@ -55,44 +59,18 @@ const ProductCarousel = () => {
               ))}
             </Swiper>
 
-            {/* Custom navigation buttons */}
+            {/* Custom navigation buttons using react-icons */}
             <button
               ref={prevRef}
               className="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow-md hover:bg-opacity-100 transition z-10"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
+              <HiArrowLeft className="h-5 w-5 text-gray-700" />
             </button>
             <button
               ref={nextRef}
               className="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow-md hover:bg-opacity-100 transition z-10"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              <HiArrowRight className="h-5 w-5 text-gray-700" />
             </button>
           </div>
 
@@ -109,20 +87,7 @@ const ProductCarousel = () => {
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-100 transition duration-300 ease-in-out"
             >
               SHOP NOW
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-3 h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
+              <HiArrowRight className="ml-3 h-5 w-5" />
             </a>
           </div>
         </div>

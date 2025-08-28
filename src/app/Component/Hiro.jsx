@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { GoArrowUpRight } from "react-icons/go";
 export default function HeroSection() {
   return (
     <section className="relative  bg-[#fffafc] px-2 md:px-12 lg:px-24 py-16 overflow-hidden">
@@ -32,7 +32,8 @@ export default function HeroSection() {
 
           {/* Button */}
           <button className="mt-8 px-6 py-3 bg-[#CE4E61] hover:bg-pink-600 text-white font-medium rounded flex items-center gap-2">
-            Get Started <FaLongArrowAltRight />
+            Get Started <GoArrowUpRight className="text-2xl" />{" "}
+            {/* Use the new icon and adjust size with text-lg */}
           </button>
         </div>
 

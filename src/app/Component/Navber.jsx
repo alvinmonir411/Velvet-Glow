@@ -11,11 +11,12 @@ const Navber = () => {
 
   const Navlink = (
     <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-gray-700 font-medium">
-      <Link href="/">Home</Link>
-      <Link href="/shop">Shop</Link>
-      <Link href="/product">Product</Link>
-      <Link href="/blog">Blog</Link>
-      <Link href="/contact">Contact us</Link>
+      <a href="#hiro">Home</a>
+      <a href="#collection">Shop</a>
+      <a href="#products">Product</a>
+      <a href="#blog">Blog</a>
+      <a href="#testimonial">Testimonials</a>
+      <a href="#Footer">Contact us</a>
     </div>
   );
 

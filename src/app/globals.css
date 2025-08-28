@@ -4,3 +4,6 @@
 .custom-glow-shadow {
   filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.7));
 }
+html {
+  scroll-behavior: smooth;
+}
